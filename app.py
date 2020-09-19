@@ -1,4 +1,7 @@
 from words import words
 import random
 
-print(words[random.randint(0, len(words))])
+def selectWord():
+    word = random.choice(words)
+    return word.upper()
+
