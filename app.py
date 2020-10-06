@@ -100,4 +100,8 @@ def showHangman(guess):
                     |___''']
     return states[guess]
 
+def init():
+    word = selectWord()
+    play(word)
 
+init()
