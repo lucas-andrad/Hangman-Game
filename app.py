@@ -5,6 +5,18 @@ def selectWord():
     word = random.choice(words)
     return word.upper()
 
+def play(word):
+    word_length = "_ " * len(word)
+    correct_word = False
+    used_letters = []
+    used_words = []
+    guesses = 9
+
+    print("Let's play!")
+    print(showHangman(guesses))
+    print('This is the word: ' + word_length)
+
+
 def showHangman(guess): 
     states = ['''   _______
                     |/      |
@@ -87,3 +99,5 @@ def showHangman(guess):
                     |
                     |___''']
     return states[guess]
+
+
