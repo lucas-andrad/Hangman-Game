@@ -16,6 +16,10 @@ def play(word):
     print(showHangman(guesses))
     print('This is the word: ' + word_length)
 
+    while not correct_word and guesses > 0:
+        guess = input('Type a word or letter to continue: ').upper()
+
+
 
 def showHangman(guess): 
     states = ['''   _______
