@@ -15,7 +15,6 @@ def play(word):
     print("Let's play!")
     print(showHangman(guesses))
     print('This is the word: ' + word_length)
-    print(word)
     while not correct_word and guesses > 0:
         guess = input('Type a word or letter to continue: ').upper()
         if len(guess) == 1 and guess.isalpha():
@@ -39,12 +38,16 @@ def play(word):
         else:
             print("Invalid guess. Try again")
         print(word_length)
-
+        print(showHangman(guesses))
+    if correct_word:
+        print('Congratulations! You win!')
+    else:
+        print(f'You lose. Try again. The word was {word}')
 
 
 
 def showHangman(guess): 
-    states = ['''   _______
+    states = ['''                     _______
                     |/      |
                     |       0
                     |      /|\\
