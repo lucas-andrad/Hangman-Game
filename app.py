@@ -18,7 +18,15 @@ def play(word):
 
     while not correct_word and guesses > 0:
         guess = input('Type a word or letter to continue: ').upper()
-
+    if len(guess) == 1 and guess.alpha():
+        if guess in used_letters:
+            print('You already used this letter. Try again')
+        elif guess not in word:
+            print('You missed.')
+            guesses = guesses - 1
+            used_letters.append(guess)
+    else:
+        print("Invalid guess. Try again")
 
 
 def showHangman(guess): 
